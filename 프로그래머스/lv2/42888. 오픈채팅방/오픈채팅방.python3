@@ -1,0 +1,27 @@
+def solution(record):
+    answer = []
+    user_dic = {}
+    result = []
+    for i in record:
+        user_info = i.split()
+        try:
+            method = user_info[0]
+            user_id = user_info[1]
+            nickname = user_info[2]
+        except:
+            method = user_info[0]
+            user_id = user_info[1]
+
+        if method in ("Enter", "Change"):
+            user_dic[user_id] = nickname
+        result.append((method, user_id))
+
+    for j in result:
+        method2 = j[0]
+        user_id2 = j[1]
+        if method2 == "Enter":
+            answer.append(f'{user_dic[user_id2]}님이 들어왔습니다.')
+        elif method2 == "Leave":
+            answer.append(f'{user_dic[user_id2]}님이 나갔습니다.')
+    
+    return answer
