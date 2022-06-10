@@ -1,12 +1,16 @@
 def solution(n):
     i = 1
-    previous = 0 
-    current = 1 
+    previous = 0
+    current = 1
+
+    if n == 0:
+        return previous
+    elif n == 1:
+        return current
 
     while i < n:
         c = previous
         previous = current
         current = c + previous
-        answer = current
         i += 1
     return current % 1234567
