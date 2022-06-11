@@ -1,0 +1,20 @@
+def solution(answer):
+    supo_1 = [1, 2, 3, 4, 5]
+    supo_2 = [2, 1, 2, 3, 2, 4, 2, 5]
+    supo_3 = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5]
+
+    cnt = [0, 0, 0]
+
+    for i in range(len(answer)):
+        if answer[i] == supo_1[i%5]:
+            cnt[0] += 1
+        if answer[i] == supo_2[i%8]:
+            cnt[1] += 1
+        if answer[i] == supo_3[i%10]:
+            cnt[2] += 1
+
+    result = []
+    for i in range(len(cnt)):
+        if cnt[i] == max(cnt):
+            result.append((i+1))
+    return result
