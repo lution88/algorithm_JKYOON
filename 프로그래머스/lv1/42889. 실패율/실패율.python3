@@ -1,0 +1,20 @@
+def solution(N, stages):
+    stage_num = [0] * (N+1) # 멈춰있는 스테이지 사람 수
+
+    for stage in stages:
+        stage_num[stage-1] += 1
+    print(stage_num)
+    result = []
+    total_players = len(stages)
+    for idx, stage in enumerate(stage_num):
+        # 실패율
+        if stage != 0:
+            per_fail = stage / total_players
+            result.append((idx+1,per_fail))
+            total_players -= stage
+        else:
+            result.append((idx+1, 0))
+    play_game = result[:N]
+    play_game = sorted(play_game, key=lambda x: x[1], reverse=True)
+    answer = [i[0] for i in play_game]
+    return answer
