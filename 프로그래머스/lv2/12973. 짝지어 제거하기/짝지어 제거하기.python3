@@ -1,0 +1,13 @@
+def solution(s):
+    answer = 0
+    list_s = []
+
+    for i in s:
+        if i not in list_s:
+            list_s.append(i)
+        elif i == list_s[-1]:
+            list_s.remove(i)
+
+    if len(list_s) == 0:
+        answer = 1
+    return answer
