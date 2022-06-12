@@ -1,0 +1,6 @@
+def solution(n):
+    m = str(n)
+    num = [i for i in m]
+    num.sort(reverse=True)
+    num = ''.join(num)
+    return int(num)
