@@ -1,6 +1,3 @@
 def solution(s):
-    answer = False
-    if len(s) == 4 or len(s) == 6:
-        answer = s.isdigit()
-        return answer
+    answer = s.isdigit() and len(s) in [4, 6]
     return answer
