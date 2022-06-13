@@ -1,0 +1,15 @@
+def solution(people, limit):
+    people.sort()
+
+    cnt = 0
+
+    idx_f = 0
+    idx_b = len(people) - 1
+
+    while idx_f <= idx_b:
+        cnt += 1
+        if people[idx_f] + people[idx_b] <= limit:
+            idx_f += 1
+        idx_b -= 1
+
+    return cnt
