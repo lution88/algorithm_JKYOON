@@ -1,0 +1,11 @@
+def solution(s):
+    answer = []
+    for i in s:
+        answer.append(ord(i))
+    
+    answer.sort(reverse=True)
+    
+    result = []
+    for i in answer:
+        result.append(chr(i))
+    return ''.join(result)
