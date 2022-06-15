@@ -1,0 +1,6 @@
+-- 코드를 입력하세요 : 보호시작일보다 입양일이 더 빠른 동물들
+SELECT 입양.ANIMAL_ID, 입양.NAME
+from ANIMAL_INS 보호 right join ANIMAL_OUTS 입양
+on 입양.animal_id = 보호.animal_id
+where 입양.datetime <= 보호.datetime
+order by 보호.datetime
