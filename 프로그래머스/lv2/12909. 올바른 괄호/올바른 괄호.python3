@@ -1,0 +1,17 @@
+def solution(s):
+    answer = True
+    space = []
+
+    for i in s:
+        if i == '(':
+            space.append(i)
+        else:
+            if space == []:
+                answer = False
+                break
+            else:
+                space.pop()
+
+    if space != []:
+        answer = False
+    return answer
